@@ -16,7 +16,7 @@ Step 5 : Run the web, twice for first time, and login to your Admin Panel by acc
 
 //Admin panel credentials
 $username = "admin";
-$password = "admin";
+$password = "232317";
 
 
 //Database connection
@@ -75,7 +75,7 @@ $cfg->websitetitle = "Toko Online WA";
 $cfg->maincolor = "#f28433";
 $cfg->secondcolor = "#ffb98a";
 $cfg->about = "<p>Toko online simpel sederhana berbasis WhatsApp.</p>";
-$cfg->language = "id";
+$cfg->language = "en";
 $cfg->logo = "";
 $cfg->adminwhatsapp = "6287880334339";
 $cfg->currencysymbol = "$";

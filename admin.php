@@ -7,9 +7,10 @@ WebSite: https://webappdev.my.id
 */
 
 session_start();
-include("config.php");
-include("functions.php");
-include("uilang.php");
+include_once("config.php");
+include_once("functions.php");
+include_once("uilang.php");
+include_once("thumbnailgenerator.php");
 
 ?>
 
@@ -520,11 +521,19 @@ include("uilang.php");
 											?>
 											<option selected value="en">English</option>
 											<option value="id">Bahasa Indonesia</option>
+											<option value="pt_br">Portugues Brasil</option>
 											<?php
 										}else if($cfg->language == "id"){
 											?>
 											<option value="en">English</option>
 											<option selected value="id">Bahasa Indonesia</option>
+											<option value="pt_br">Portugues Brasil</option>
+											<?php
+										}else if($cfg->language == "pt_br"){
+											?>
+											<option value="en">English</option>
+											<option value="id">Bahasa Indonesia</option>
+											<option selected value="pt_br">Portugues Brasil</option>
 											<?php
 										}
 										?>

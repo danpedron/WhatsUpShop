@@ -1,7 +1,7 @@
 <?php
 
-include("config.php");
-include("uilang.php");
+include_once("config.php");
+include_once("uilang.php");
 
 $dirpath = "pictures/*";
 $files = array();

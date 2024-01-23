@@ -1,7 +1,7 @@
 <?php
-include("config.php");
-include("thumbnailgenerator.php");
-include("uilang.php");
+include_once("config.php");
+include_once("thumbnailgenerator.php");
+include_once("uilang.php");
 
 if(isset($_POST["editposttitle"]) && isset($_POST["id"])){
 	$id = mysqli_real_escape_string($connection, $_POST["id"]);
