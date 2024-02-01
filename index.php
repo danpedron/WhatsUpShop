@@ -33,7 +33,7 @@ if($websitetitle == ""){
 			
 			if(isset($_GET["post"])){
 				$postid = mysqli_real_escape_string($connection, $_GET["post"]);
-				$sql = "SELECT * FROM $tableposts WHERE postid = '$postid'";
+				$sql = "SELECT * FROM $tableposts WHERE ativo=1 and postid = '$postid'";
 				$result = mysqli_query($connection, $sql);
 				if($result){
 					$title = shorten_text(mysqli_fetch_assoc($result)["title"], 40, ' ...', false) . " - " . $websitetitle;
@@ -141,7 +141,7 @@ if($websitetitle == ""){
 							<?php
 							$postid = mysqli_real_escape_string($connection, $_GET["post"]);
 							if($postid != ""){
-								$sql = "SELECT * FROM  $tableposts WHERE postid = '$postid'";
+								$sql = "SELECT * FROM  $tableposts WHERE ativo=1 AND postid = '$postid'";
 								$result = mysqli_query($connection, $sql);
 								if(mysqli_num_rows($result) == 0){
 									echo "<p>" .uilang("Nothing found"). "</p>";
@@ -353,7 +353,7 @@ if($websitetitle == ""){
 							
 							<div class="randomvidblock"><?php echo uilang("You may like:") ?></div>
 							<?php
-							$sql = "SELECT * FROM $tableposts ORDER BY RAND() LIMIT 5";
+							$sql = "SELECT * FROM $tableposts WHERE ativo=1 ORDER BY RAND() LIMIT 5";
 							$result = mysqli_query($connection, $sql);
 							if(mysqli_num_rows($result) > 0){
 								while($row = mysqli_fetch_assoc($result)){
@@ -431,7 +431,7 @@ if($websitetitle == ""){
 					<div class="section firstthreecontainer">
 						<div id="firstthree">
 							<?php
-							$sql = "SELECT * FROM $tableposts ORDER BY id DESC LIMIT 3";
+							$sql = "SELECT * FROM $tableposts WHERE ativo=1 ORDER BY id DESC LIMIT 3";
 							$result = mysqli_query($connection, $sql);
 							if($result){
 								if(mysqli_num_rows($result) == 0){
@@ -473,7 +473,7 @@ if($websitetitle == ""){
 				
 				<div class="section gridcontainerunscrollable">
 					<?php
-					$sql = "SELECT * FROM $tableposts ORDER BY id DESC";
+					$sql = "SELECT * FROM $tableposts WHERE ativo=1 ORDER BY ordem,id DESC";
 					$result = mysqli_query($connection, $sql);
 					if($result){
 						if(mysqli_num_rows($result) > 0){
@@ -726,7 +726,7 @@ if($websitetitle == ""){
 					cartdata += "<h3><?php echo uilang("Contact Information") ?></h3><label><?php echo uilang("Name") ?></label><input id='cdname' placeholder='<?php echo uilang("Name") ?>'>"
 					cartdata += "<label><?php echo uilang("Mobile") ?></label><input id='cdmobile' type='number' placeholder='<?php echo uilang("Mobile") ?>'>"
 					cartdata += "<label><?php echo uilang("Delivery Address") ?></label><input id='cdaddress' placeholder='<?php echo uilang("Delivery Address") ?>'>"
-					cartdata += "<label><?php echo uilang("Delivery Method") ?></label><select id='cdmethod'><?php echo uilang("Delivery Method") ?><option>Take Away</option><option>Home Delivery</option><option>Dining</option></select>"
+					cartdata += "<label><?php echo uilang("Delivery Method") ?></label><select id='cdmethod'><?php echo uilang("Delivery Method") ?><option>Retirada</option><option>Delivery</option></select>"
 					cartdata += "<label><?php echo uilang("Order Notes") ?></label><textarea id='cartordernotes' placeholder='<?php echo uilang("Order Notes") ?>'></textarea>"
 					cartdata += "<div style='text-align: center;'><div class='buybutton' onclick='hidecartui()'><i class='fa fa-arrow-left'></i> <?php echo uilang("Back to Shop") ?></div><div class='buybutton' onclick='clearcart()'><i class='fa fa-times'></i> <?php echo uilang("Clear Cart") ?></div><div class='buybutton' onclick='chatnow()'><i class='fa fa-whatsapp'></i> <?php echo uilang("Order on WhatsApp") ?></div></div>"
 					$("#cartdata").html(cartdata)
