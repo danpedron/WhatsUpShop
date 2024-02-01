@@ -15,8 +15,9 @@ Step 5 : Run the web, twice for first time, and login to your Admin Panel by acc
 */
 
 //Admin panel credentials
-$username = "admin";
-$password = "232317";
+include_once("secretInfo.php");
+$username = ADMIN_USERNAME;
+$password = ADMIN_PASSWORD;
 
 
 //Database connection
