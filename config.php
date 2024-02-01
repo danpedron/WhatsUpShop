@@ -15,7 +15,7 @@ Step 5 : Run the web, twice for first time, and login to your Admin Panel by acc
 */
 
 //Admin panel credentials
-include_once("secretInfo.php");
+require_once("secretInfo.php");
 $username = ADMIN_USERNAME;
 $password = ADMIN_PASSWORD;
 
