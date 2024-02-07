@@ -17,7 +17,7 @@ function showCatName($id){
 	global $tablecategories;
 	$sql = "SELECT * FROM $tablecategories WHERE id = $id";
 	$catname = uilang("Uncategorized");
-	$fetchedcat = mysqli_fetch_assoc(mysqli_query($connection, $sql))["category"];
+	$fetchedcat = (mysqli_fetch_assoc(mysqli_query($connection, $sql))["category"]??null);
 	if($fetchedcat != "")
 		$catname = $fetchedcat;
 	return $catname;

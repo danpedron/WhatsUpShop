@@ -11,6 +11,7 @@ Donate: https://www.paypal.com/paypalme/habibieamrullah
 include("config.php");
 include("functions.php");
 include("uilang.php");
+include("accesslog.php");
 
 $deccount = 2;
 if($cfg->disabledecimals == 1)
@@ -28,7 +29,8 @@ if($websitetitle == ""){
 	<!DOCTYPE html>
 	<html>
 		<head>
-			
+<?php include("../googletag.php"); ?>
+
 			<?php
 			
 			if(isset($_GET["post"])){

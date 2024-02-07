@@ -38,4 +38,4 @@ https://youtu.be/NRy8SnLLpe4
 
 Se você gostou deste trabalho, visite meu canal no YouTube, curta e inscreva-se. Se você tiver dinheiro para apreciar este trabalho, por favor, faça uma doação em: https://paypal.me/habibieamrullah
 
-[^1]: [@danpedron](https://www.linkedin.com/in/danpedron/)
+[^1]: [Linkedin: @danpedron](https://www.linkedin.com/in/danpedron/) / [Fazer doação](https://www.paypal.com/donate/?hosted_button_id=GG8S3BDLRQ66S)

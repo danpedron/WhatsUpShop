@@ -18,6 +18,7 @@ include_once("thumbnailgenerator.php");
 <!DOCTYPE html>
 <html>
 	<head>
+<?php include_once('../googletag.php'); ?>
 		<title>Admin Panel | <?php echo $websitetitle ?></title>
 		<meta charset="utf-8">
         <meta http-equiv="Pragma" content="no-cache" />
@@ -38,7 +39,7 @@ include_once("thumbnailgenerator.php");
 		<script src="jquery.form.js"></script>
 		<script src="jscolor.js"></script>
 		<script src="<?php echo $baseurl ?>somefunctions.js"></script>
-		<?php include("style.php"); ?>
+		<?php include_once("style.php"); ?>
 		<style>
 			body{
 				padding: 0px;
@@ -221,7 +222,7 @@ include_once("thumbnailgenerator.php");
 								
 								if(isset($_POST["submitmorepictures"])){
 									
-									include("thumbnailgenerator.php");
+									include_once("thumbnailgenerator.php");
 									
 									$files = array_filter($_FILES['newmorepicture']['name']);
 									$total = count($files);
